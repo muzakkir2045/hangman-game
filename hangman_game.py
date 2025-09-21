@@ -16,12 +16,12 @@ if __name__ == '__main__':
     print("Guess the word! Hint: word is a name of a fruit")
 
     for i in word:
-        print("_", end = ' ')
+        print("_", end = ' ')  # Printing empty spaces
     print()
 
     playing = True
     
-    letterGuessed = ''
+    letterGuessed = ''     # -> list for storing the guessed letters
     chances = len(word) + 2
     correct = 0
     flag = 0
@@ -51,19 +51,16 @@ if __name__ == '__main__':
                 for _ in range(k):
                     letterGuessed += guess
 
-
             for char in word:
                 if char in letterGuessed and (Counter(letterGuessed) != Counter(word)):
                     print(char, end= ' ')
                     correct += 1
-
                 elif (Counter(letterGuessed)) == Counter(word):
                     print("The word is : ",end = ' ')
                     print(word)
                     flag = 1
                     print('Congratulations, You won!')
-                    break
-                
+                    break    # To break out of the for loop
                 else:
                     print('_', end = ' ')
                 
