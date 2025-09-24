@@ -7,21 +7,17 @@ from collections import Counter
 someWords = '''apple banana mango strawberry orange grape 
 pineapple apricot lemon coconut watermelon 
 cherry papaya berry peach lychee muskmelon'''
-
-someWords = list(map(lambda n: n.strip('\n'), someWords.split(' ')))
-word = random.choice(someWords)
+word = random.choice(list(map(lambda n: n.strip('\n'), someWords.split(' '))))
 
 if __name__ == '__main__':
     print("Guess the word! Hint: word is a name of a fruit")
     for i in word:
         print("_", end = ' ')  # Printing empty spaces
     print()
-
     playing = True
     letterGuessed = ''     # -> list for storing the guessed letters
     chances = len(word) + 2
-    correct = 0
-    flag = 0
+    correct,flag = 0 ,0
     try:
         while (chances != 0) and flag == 0:
             print()
